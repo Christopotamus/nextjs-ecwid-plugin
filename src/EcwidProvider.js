@@ -42,6 +42,7 @@ export const EcwidProvider = ({ value, children }) => {
       script.onload = init_ecwid;
       document.body.appendChild(script);
     } else {
+      console.log("Ecwid script already present...");
       init_ecwid();
     }
   });
