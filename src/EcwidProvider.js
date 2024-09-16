@@ -29,7 +29,7 @@ export const EcwidProvider = ({ value, children }) => {
     window.ec.config.storefrontUrls.cleanUrls = true;
     window.ec.config.storefrontUrls.queryBasedCleanUrls = true;
 
-    window.ecwid_script_defer = true;
+    window.ecwid_script_defer = false;
     window.ecwid_dynamic_widgets = true;
 
 
