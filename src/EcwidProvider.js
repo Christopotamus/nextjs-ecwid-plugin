@@ -28,6 +28,12 @@ export const EcwidProvider = ({ value, children }) => {
     window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
     window.ec.config.storefrontUrls.cleanUrls = true;
     window.ec.config.storefrontUrls.queryBasedCleanUrls = true;
+    // Ecwid builds product URLs from the page its script first loaded on. When
+    // the script loads on another page and the storefront is reached by
+    // client-side navigation, product links would land on that page instead.
+    if (value.baseUrl) {
+      window.ec.config.baseUrl = value.baseUrl;
+    }
 
     window.ecwid_script_defer = false;
     window.ecwid_dynamic_widgets = true;

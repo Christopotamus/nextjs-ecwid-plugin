@@ -24,6 +24,12 @@ export const EcwidProviderWrapper = ({ value, children }) => {
 export default EcwidProviderWrapper;
 ```
 
+If the provider wraps your whole app (e.g. in the root layout) and the store lives on its own page, pass that page's path as `baseUrl`. Ecwid otherwise builds product URLs from whichever page its script first loaded on, so a visitor who starts on `/` and navigates to `/store` would get product links under `/`.
+
+```javascript
+<EcwidProvider value={{ storeId: process.env.NEXT_PUBLIC_ECWID_STORE_ID, baseUrl: '/store' }}>
+```
+
 Add this to your component or layout:
 
 ```javascript
